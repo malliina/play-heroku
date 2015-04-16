@@ -33,7 +33,7 @@ class Ranges extends FunSuite {
     assert(!(validator isValid "212.2.4.6"))
     assert(!(validator isValid "10.1.0.1"))
 
-    val dismissive = IPValidator.fromList(Nil).get
-    assert(!(dismissive isValid "10.0.0.1"))
+    val acceptsAll = IPValidator.fromList(Nil).get
+    assert(acceptsAll isValid "10.0.0.1")
   }
 }
