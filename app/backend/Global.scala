@@ -4,6 +4,8 @@ import com.mle.util.Log
 import play.api.{Application, GlobalSettings}
 
 /**
+ * Yo!
+ *
  * @author Michael
  */
 object Global extends GlobalSettings with Log {
