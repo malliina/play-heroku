@@ -1,2 +1,4 @@
-GET     /                       controllers.Home.index
-GET     /assets/*file           controllers.Assets.at(path = "/public", file)
+GET         /                    controllers.Home.index
+GET         /headers             controllers.Home.headers
+POST        /headers             controllers.Home.resolveHeaders
+GET         /assets/*file        controllers.Assets.at(path = "/public", file)

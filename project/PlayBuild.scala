@@ -13,7 +13,7 @@ object PlayBuild extends Build {
     fork in Test := true,
     updateOptions := updateOptions.value.withCachedResolution(true),
     libraryDependencies ++= Seq(
-      "com.github.malliina" %% "play-base" % "0.4.0",
+      "com.github.malliina" %% "play-base" % "0.4.2",
       "commons-net" % "commons-net" % "3.3",
       "commons-validator" % "commons-validator" % "1.4.1"
     ),
