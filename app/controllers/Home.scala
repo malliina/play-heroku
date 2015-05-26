@@ -2,7 +2,7 @@ package controllers
 
 import java.net.URLDecoder
 
-import backend.Conf
+import backend.IPConf
 import com.mle.concurrent.ExecutionContexts.cached
 import com.mle.http.AsyncHttp
 import com.mle.util.Log
@@ -51,7 +51,7 @@ object Home extends Controller with Log {
     )
   })
 
-  def whitelisted(a: => EssentialAction) = withWhitelist(Conf.validator)(a)
+  def whitelisted(a: => EssentialAction) = withWhitelist(IPConf.validator)(a)
 
   def withWhitelist(validator: IIPValidator)(a: => EssentialAction) = EssentialAction(request => {
     val ip = remoteAddress(request)

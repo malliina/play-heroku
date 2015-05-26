@@ -9,7 +9,7 @@ import scala.util.{Failure, Success}
 /**
  * @author Michael
  */
-object Conf extends Log {
+object IPConf extends Log {
   val WHITELIST_KEY = "ip.whitelist"
   val whitelist = sys.env.get(WHITELIST_KEY).map(_.split(" ").toSeq) orElse
     current.configuration.getStringSeq(WHITELIST_KEY) getOrElse Nil
@@ -18,7 +18,7 @@ object Conf extends Log {
       case Success(v) =>
         v
       case Failure(t) =>
-        log info s"Unable to parse whitelist. ${t.getMessage}"
+        log.error(s"Unable to parse IP whitelist.", t)
         IPValidator.forbidAll
     }
   }
